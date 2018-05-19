@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Luck-Based Game</title>
+</head>
+<style type="text/css">
+	div{
+		width: 500px;
+		margin: auto;
+	}
+	h1{
+		text-size: 22px;
+	}
+	.red{
+		color: red;
+	}
+	.green{
+		color: green;
+	}
+</style>
+<body>
+	<div>
+		<h1> Project #3: Luck-Based Game </h3>
+		<button onclick="flip()">Flip The Coin</button>
+		<p id="gameResult"></p>
+	</div>
+	<script type="text/javascript">
+		function flip() {
+			var user = Math.floor(Math.random() * 10) % 2;
+			var computer = Math.floor(Math.random() * 10) % 2;
+			if (user === computer) {
+				document.getElementById('gameResult').innerHTML = "YOU WON!";
+				document.getElementById('gameResult').className = "green";
+			}
+			else {
+				document.getElementById('gameResult').innerHTML = "YOU LOST!";
+				document.getElementById('gameResult').className = "red";
+			}
+			console.log(user, computer);
+		}
+	</script>
+</body>
+</html>
